@@ -1,97 +1,86 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# SecurePasswordMobile (FLYPASS)
 
-# Getting Started
+FLYPASS, kullanıcıların ana parolalarını kullanarak sitelere özel, güçlü ve deterministik parolalar üretmelerini sağlayan güvenli bir mobil parola yöneticisi uygulamasıdır.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Özellikler
 
-## Step 1: Start Metro
+*   **Ana Parola Koruması:** Tek bir ana parola ile tüm şifrelerinizi güvenle yönetin.
+*   **Deterministik Parola Üretimi:** Aynı site adı ve ana parola ile her zaman aynı karmaşık ve tahmin edilemez parolayı üretir.
+*   **Siteye Özel Profiller:**
+    *   Her site için farklı kullanıcı adları ve profil etiketleri tanımlayabilme.
+    *   Çeşitli parola tipleri (Maksimum Güvenlik, Sadece Rakam vb.) arasından seçim yapabilme.
+    *   Aynı site için birden fazla farklı parola tipinde profil oluşturabilme.
+*   **Yerel Depolama:** Tüm verileriniz güvenli bir şekilde sadece cihazınızda saklanır (`AsyncStorage` kullanılır).
+*   **Kullanıcı Dostu Arayüz:** Kolay ve hızlı kullanım için basit, anlaşılır ve sekmeli bir arayüz sunar.
+*   **(Geliştirme Aşamasındaki ve Gelecekteki Özellikler)**
+    *   Pwned Passwords API entegrasyonu ile ana parola sızıntı kontrolü.
+    *   Veri yedekleme ve geri yükleme (Export/Import) özelliği.
+    *   Çoklu dil desteği (Türkçe başlangıç dilidir).
+    *   Biyometrik kimlik doğrulama (Parmak izi / Yüz tanıma) ile oturum açma.
+    *   iOS platformu desteği.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Kurulum ve Çalıştırma (Android)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+Bu bir React Native projesidir. Geliştirme ortamınızı kurduktan sonra aşağıdaki adımları izleyebilirsiniz.
 
-```sh
-# Using npm
-npm start
+### Gereksinimler
 
-# OR using Yarn
-yarn start
-```
+*   Node.js (LTS versiyonu önerilir)
+*   Yarn veya npm
+*   React Native CLI
+*   Android Studio ve Android SDK
+*   Java Development Kit (JDK)
 
-## Step 2: Build and run your app
+### Adımlar
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+1.  **Repoyu Klonlayın:**
+    ```bash
+    git clone https://github.com/OKANKELES/SecurePasswordMobile.git
+    cd SecurePasswordMobile
+    ```
 
-### Android
+2.  **Bağımlılıkları Yükleyin:**
+    ```bash
+    npm install
+    # veya
+    yarn install
+    ```
 
-```sh
-# Using npm
-npm run android
+3.  **Metro Bundler'ı Başlatın:**
+    Ayrı bir terminal penceresinde:
+    ```bash
+    npm start -- --reset-cache
+    # veya
+    yarn start --reset-cache
+    ```
 
-# OR using Yarn
-yarn android
-```
+4.  **Uygulamayı Android Emülatörde veya Cihazda Çalıştırın:**
+    ```bash
+    npm run android
+    # veya
+    yarn android
+    ```
+    (Veya doğrudan Android Studio üzerinden çalıştırın.)
 
-### iOS
+## Kullanılan Teknolojiler
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+*   React Native
+*   JavaScript
+*   React Navigation (Navigasyon için)
+*   AsyncStorage (Yerel depolama için)
+*   `react-native-vector-icons` (İkonlar için)
+*   `react-native-quick-crypto` (Kriptografik işlemler için)
+*   `@sphereon/isomorphic-argon2` (Anahtar türetme için)
+*   `i18next`, `react-i18next`, `react-native-localize` (Dil desteği için - entegrasyon aşamasında)
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+## Katkıda Bulunma
 
-```sh
-bundle install
-```
+Katkılarınız her zaman beklerim! Lütfen bir "issue" açarak fikirlerinizi belirtin veya bir "pull request" gönderin.
 
-Then, and every time you update your native dependencies, run:
+## Lisans
 
-```sh
-bundle exec pod install
-```
+Bu proje [MIT Lisansı](LICENSE) (Eğer `LICENSE` adında bir dosya eklerseniz) altındadır.
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+---
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+_Bu README dosyası projenin mevcut durumuna göre güncellenecektir._
