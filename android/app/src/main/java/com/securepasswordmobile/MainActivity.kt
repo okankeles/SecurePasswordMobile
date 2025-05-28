@@ -1,9 +1,11 @@
 package com.securepasswordmobile
 
+import android.os.Bundle
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
+import com.reactnativecommunity.asyncstorage.AsyncStoragePackage
 
 class MainActivity : ReactActivity() {
 
@@ -19,4 +21,11 @@ class MainActivity : ReactActivity() {
    */
   override fun createReactActivityDelegate(): ReactActivityDelegate =
       DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
+      
+  /**
+   * Required for react-navigation
+   */
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(null)
+  }
 }

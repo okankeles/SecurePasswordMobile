@@ -10,8 +10,24 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^2.1.2",
+    "@react-native-clipboard/clipboard": "^1.16.2",
+    "@react-native-community/slider": "^4.5.7",
+    "@react-native-picker/picker": "^2.11.0",
+    "@react-navigation/native": "^7.1.9",
+    "@react-navigation/native-stack": "^7.3.13",
+    "@sphereon/isomorphic-argon2": "^1.0.1",
+    "buffer": "^6.0.3",
+    "i18next": "^25.2.1",
     "react": "19.0.0",
-    "react-native": "0.79.2"
+    "react-i18next": "^15.5.2",
+    "react-native": "0.79.2",
+    "react-native-argon2": "^2.0.1",
+    "react-native-localize": "^3.4.1",
+    "react-native-quick-crypto": "^0.7.13",
+    "react-native-safe-area-context": "^5.4.1",
+    "react-native-screens": "^4.10.0",
+    "react-native-vector-icons": "^10.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
